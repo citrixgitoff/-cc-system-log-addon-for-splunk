@@ -136,6 +136,7 @@ model_additional_parameters = RestModel(fields_additional_parameters, name='addi
 endpoint = MultipleModel(
     'citrix_system_log_add_on_settings',
     models=[
+        model_proxy,
         model_logging, 
         model_additional_parameters
     ],
