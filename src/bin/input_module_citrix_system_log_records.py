@@ -59,7 +59,7 @@ def get_token(helper, customer_id, client_id, client_secret, cloud_environment):
 
     token_response = helper.send_http_request(get_token_url, "POST", parameters=None, payload=get_token_body,
                                         headers=get_token_headers, cookies=None, verify=True, cert=None,
-                                        timeout=(10.0,60.0), use_proxy=False)
+                                        timeout=(10.0,60.0), use_proxy=True)
 
     token_response_status = token_response.status_code
     if token_response_status != 200:
@@ -93,7 +93,7 @@ def get_new_records(helper, ew, customer_id, start_date, token, cloud_environmen
 
         records_response = helper.send_http_request(get_records_url, "GET", parameters=None, payload=None,
                                             headers=get_records_headers, cookies=None, verify=True, cert=None,
-                                            timeout=(10.0,60.0), use_proxy=False)
+                                            timeout=(10.0,60.0), use_proxy=True)
 
         records_response_status = records_response.status_code
         if records_response_status != 200:
